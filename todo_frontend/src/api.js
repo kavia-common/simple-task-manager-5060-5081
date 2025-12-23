@@ -3,7 +3,10 @@
 // Handles CRUD operations and completion toggle for tasks.
 //
 
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL =
+  process.env.REACT_APP_API_BASE && process.env.REACT_APP_API_BASE !== ""
+    ? process.env.REACT_APP_API_BASE
+    : "http://localhost:3001";
 
 // PUBLIC_INTERFACE
 export async function fetchTasks() {
